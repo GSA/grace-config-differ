@@ -1,0 +1,131 @@
+{
+  "fileVersion": "1.0",
+  "configSnapshotId": "test",
+  "configurationItems": [
+    {
+      "relatedEvents": [],
+      "relationships": [],
+      "configuration": {
+        "name": "test",
+        "owner": {
+          "id": "test"
+        },
+        "creationDate": "2019-03-11T14:16:47.000Z"
+      },
+      "supplementaryConfiguration": {
+        "AccessControlList": "{\"grantSet\":null,\"grantList\":[{\"grantee\":{\"id\":\"test\",\"displayName\":null},\"permission\":\"FullControl\"},{\"grantee\":\"LogDelivery\",\"permission\":\"Write\"},{\"grantee\":\"LogDelivery\",\"permission\":\"ReadAcp\"}],\"owner\":{\"displayName\":null,\"id\":\"test\"},\"isRequesterCharged\":false}",
+        "BucketAccelerateConfiguration": {},
+        "BucketLifecycleConfiguration": {
+          "rules": [
+            {
+              "id": "awslog",
+              "status": "Enabled",
+              "filter": {
+                "predicate": {
+                  "type": "LifecycleAndOperator",
+                  "operands": [
+                    {
+                      "type": "LifecyclePrefixPredicate",
+                      "prefix": "awslog/"
+                    },
+                    {
+                      "type": "LifecycleTagPredicate",
+                      "tag": {
+                        "key": "rule",
+                        "value": "awslog"
+                      }
+                    },
+                    {
+                      "type": "LifecycleTagPredicate",
+                      "tag": {
+                        "key": "autoclean",
+                        "value": "true"
+                      }
+                    }
+                  ]
+                }
+              },
+              "expirationInDays": 900,
+              "expiredObjectDeleteMarker": false,
+              "noncurrentVersionExpirationInDays": -1,
+              "transitions": [
+                {
+                  "days": 365,
+                  "storageClass": "GLACIER"
+                }
+              ]
+            }
+          ]
+        },
+        "BucketLoggingConfiguration": {
+          "destinationBucketName": "test-access-logs",
+          "logFilePrefix": "test-logs/"
+        },
+        "BucketNotificationConfiguration": {
+          "configurations": {
+            "tf-s3-lambda-20190715114253821200000002": {
+              "type": "LambdaConfiguration",
+              "functionARN": "arn:aws:lambda:us-east-1:123456789012:function:test-config-differ",
+              "events": [
+                "s3:ObjectCreated:*"
+              ],
+              "objectPrefixes": [],
+              "filter": {
+                "s3KeyFilter": {
+                  "filterRules": [
+                    {
+                      "name": "Prefix",
+                      "value": "awsconfig/AWSLogs/"
+                    },
+                    {
+                      "name": "Suffix",
+                      "value": ".json.gz"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "BucketPolicy": {
+          "policyText": "{\"Statement\":[{\"Action\":\"s3:GetBucketAcl\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":[\"config.amazonaws.com\",\"delivery.logs.amazonaws.com\",\"cloudtrail.amazonaws.com\"]},\"Resource\":\"arn:aws:s3:::proj-env-logging\",\"Sid\":\"AWSLogDeliveryAclCheck\"}],\"Version\":\"2012-10-17\"}"
+        },
+        "BucketVersioningConfiguration": {
+          "status": "Enabled",
+          "isMfaDeleteEnabled": false
+        },
+        "IsRequesterPaysEnabled": false,
+        "PublicAccessBlockConfiguration": {
+          "blockPublicAcls": true,
+          "ignorePublicAcls": true,
+          "blockPublicPolicy": true,
+          "restrictPublicBuckets": true
+        },
+        "ServerSideEncryptionConfiguration": {
+          "rules": [
+            {
+              "applyServerSideEncryptionByDefault": {
+                "sseAlgorithm": "aws:kms",
+                "kmsMasterKeyID": "arn:aws:kms:us-east-1:123456789012:key/a99a9a9a-a99c-49a9-a99a-aa9a9a999a99"
+              }
+            }
+          ]
+        }
+      },
+      "tags": {},
+      "configurationItemVersion": "1.3",
+      "configurationItemCaptureTime": "2019-10-17T22:05:33.000Z",
+      "configurationStateId": 1571349933151,
+      "awsAccountId": "123456789012",
+      "configurationItemStatus": "OK",
+      "resourceType": "AWS::S3::Bucket",
+      "resourceId": "test",
+      "resourceName": "test",
+      "ARN": "arn:aws:s3:::test",
+      "awsRegion": "us-east-1",
+      "availabilityZone": "Regional",
+      "configurationStateMd5Hash": "",
+      "resourceCreationTime": "2019-03-11T14:16:47.000Z"
+    }
+  ]
+}

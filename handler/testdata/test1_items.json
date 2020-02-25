@@ -1,0 +1,60 @@
+[
+        {
+            "version": "1.3",
+            "accountId": "123456789012",
+            "configurationItemCaptureTime": "2019-07-16T11:18:20Z",
+            "configurationItemStatus": "OK",
+            "configurationStateId": "1563275900379",
+            "configurationItemMD5Hash": "",
+            "arn": "arn:aws:s3:::bucket-name",
+            "resourceType": "AWS::S3::Bucket",
+            "resourceId": "bucket-name",
+            "resourceName": "bucket-name",
+            "awsRegion": "us-east-1",
+            "availabilityZone": "Regional",
+            "resourceCreationTime": "2019-03-14T03:55:57Z",
+            "tags": {},
+            "relatedEvents": [],
+            "relationships": [],
+            "configuration": "{\"name\":\"bucket-name\",\"owner\":{\"displayName\":null,\"id\":\"idnumber\"},\"creationDate\":\"2019-03-14T15:55:57.000Z\"}",
+            "supplementaryConfiguration": {
+                "AccessControlList": "\"{\\\"grantSet\\\":null,\\\"grantList\\\":[{\\\"grantee\\\":{\\\"id\\\":\\\"idnumber\\\",\\\"displayName\\\":null},\\\"permission\\\":\\\"FullControl\\\"},{\\\"grantee\\\":\\\"LogDelivery\\\",\\\"permission\\\":\\\"Write\\\"},{\\\"grantee\\\":\\\"LogDelivery\\\",\\\"permission\\\":\\\"ReadAcp\\\"}],\\\"owner\\\":{\\\"displayName\\\":null,\\\"id\\\":\\\"idnumber\\\"},\\\"isRequesterCharged\\\":false}\"",
+                "BucketAccelerateConfiguration": "{\"status\":null}",
+                "BucketLifecycleConfiguration": "{\"rules\":[{\"id\":\"awslog\",\"prefix\":null,\"status\":\"Enabled\",\"filter\":{\"predicate\":{\"type\":\"LifecycleAndOperator\",\"operands\":[{\"type\":\"LifecyclePrefixPredicate\",\"prefix\":\"awslog/\"},{\"type\":\"LifecycleTagPredicate\",\"tag\":{\"key\":\"rule\",\"value\":\"awslog\"}},{\"type\":\"LifecycleTagPredicate\",\"tag\":{\"key\":\"autoclean\",\"value\":\"true\"}}]}},\"expirationInDays\":900,\"expiredObjectDeleteMarker\":false,\"noncurrentVersionExpirationInDays\":-1,\"expirationDate\":null,\"transitions\":[{\"days\":365,\"date\":null,\"storageClass\":\"GLACIER\"}],\"noncurrentVersionTransitions\":null,\"abortIncompleteMultipartUpload\":null}]}",
+                "BucketLoggingConfiguration": "{\"destinationBucketName\":null,\"logFilePrefix\":null}",
+                "BucketNotificationConfiguration": "{\"configurations\":{}}",
+                "BucketPolicy": "{\"policyText\":null}",
+                "BucketVersioningConfiguration": "{\"status\":\"Enabled\",\"isMfaDeleteEnabled\":false}",
+                "IsRequesterPaysEnabled": "false",
+                "PublicAccessBlockConfiguration": "{\"blockPublicAcls\":true,\"ignorePublicAcls\":true,\"blockPublicPolicy\":true,\"restrictPublicBuckets\":true}",
+                "ServerSideEncryptionConfiguration": "{\"rules\":[{\"applyServerSideEncryptionByDefault\":{\"sseAlgorithm\":\"AES256\",\"kmsMasterKeyID\":null}}]}"
+            }
+        },
+        {
+            "version": "1.3",
+            "accountId": "123456789012",
+            "configurationItemCaptureTime": "2019-07-15T13:28:39Z",
+            "configurationItemStatus": "OK",
+            "configurationStateId": "1563197403677",
+            "configurationItemMD5Hash": "",
+            "arn": "arn:aws:iam::123456789012:policy/project-env-prog",
+            "resourceType": "AWS::IAM::Policy",
+            "resourceId": "ANPAVPRN64ZYOK22R4VGI",
+            "resourceName": "project-env-prog",
+            "awsRegion": "global",
+            "availabilityZone": "Not Applicable",
+            "resourceCreationTime": "2019-07-15T11:42:42Z",
+            "tags": {},
+            "relatedEvents": [],
+            "relationships": [
+                {
+                    "resourceType": "AWS::IAM::Role",
+                    "resourceId": "IDNUMBER",
+                    "resourceName": "project-env-prog",
+                    "relationshipName": "Is attached to Role"
+                }
+            ],
+            "configuration": "{\"policyName\":\"project-env-prog\",\"policyId\":\"ANPAVPRN64ZYOK22R4VGI\",\"arn\":\"arn:aws:iam::123456789012:policy/project-env-prog\",\"path\":\"/\",\"defaultVersionId\":\"v4\",\"attachmentCount\":1,\"permissionsBoundaryUsageCount\":null,\"isAttachable\":true,\"description\":\"Policy to allow creating project service inventory report\",\"createDate\":\"2019-07-15T11:42:42.000Z\",\"updateDate\":\"2019-07-15T13:26:17.000Z\",\"policyVersionList\":[{\"document\":\"%7B%0A%20%20%22Version%22%3A%20%222012-10-17%22%2C%0A%20%20%22Statement%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22Action%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22config%3ADescribeConfigRuleEvaluationStatus%22%2C%0A%20%20%20%20%20%20%20%20%22config%3AGetResourceConfigHistory%22%2C%0A%20%20%20%20%20%20%20%20%22config%3AListDiscoveredResources%22%2C%0A%20%20%20%20%20%20%20%20%22logs%3ACreateLogGroup%22%2C%0A%20%20%20%20%20%20%20%20%22logs%3ACreateLogStream%22%2C%0A%20%20%20%20%20%20%20%20%22logs%3APutLogEvents%22%2C%0A%20%20%20%20%20%20%20%20%22ses%3ASendEmail%22%0A%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%22Effect%22%3A%20%22Allow%22%2C%0A%20%20%20%20%20%20%22Resource%22%3A%20%22%2A%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22Action%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22s3%3AGetObject%22%2C%0A%20%20%20%20%20%20%20%20%22s3%3AListBucket%22%0A%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%22Effect%22%3A%20%22Allow%22%2C%0A%20%20%20%20%20%20%22Resource%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22arn%3Aaws%3As3%3A%3A%3Aproject-env-logging%22%2C%0A%20%20%20%20%20%20%20%20%22arn%3Aaws%3As3%3A%3A%3Aproject-env-logging%2F%2A%22%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22Effect%22%3A%20%22Allow%22%2C%0A%20%20%20%20%20%20%22Action%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22kms%3ADecrypt%22%0A%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%22Resource%22%3A%20%22arn%3Aaws%3Akms%3Aus-east-1%3A123456789012%3Akey%2F793a6cce-8a6e-4a2e-9507-84057baf86be%22%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D%0A\",\"versionId\":\"v4\",\"isDefaultVersion\":true,\"createDate\":\"2019-07-15T13:26:17.000Z\"},{\"document\":\"%7B%0A%20%20%22Version%22%3A%20%222012-10-17%22%2C%0A%20%20%22Statement%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22Action%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22config%3ADescribeConfigRuleEvaluationStatus%22%2C%0A%20%20%20%20%20%20%20%20%22config%3AGetResourceConfigHistory%22%2C%0A%20%20%20%20%20%20%20%20%22config%3AListDiscoveredResources%22%2C%0A%20%20%20%20%20%20%20%20%22logs%3ACreateLogGroup%22%2C%0A%20%20%20%20%20%20%20%20%22logs%3ACreateLogStream%22%2C%0A%20%20%20%20%20%20%20%20%22logs%3APutLogEvents%22%2C%0A%20%20%20%20%20%20%20%20%22ses%3ASendEmail%22%0A%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%22Effect%22%3A%20%22Allow%22%2C%0A%20%20%20%20%20%20%22Resource%22%3A%20%22%2A%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22Action%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22s3%3AGetObject%22%2C%0A%20%20%20%20%20%20%20%20%22s3%3AHeadBucket%22%2C%0A%20%20%20%20%20%20%20%20%22s3%3AListAllMyBuckets%22%2C%0A%20%20%20%20%20%20%20%20%22s3%3AListBucket%22%0A%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%22Effect%22%3A%20%22Allow%22%2C%0A%20%20%20%20%20%20%22Resource%22%3A%20%22arn%3Aaws%3As3%3A%3A%3Aproject-env-logging%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22Effect%22%3A%20%22Allow%22%2C%0A%20%20%20%20%20%20%22Action%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22kms%3ADecrypt%22%0A%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%22Resource%22%3A%20%22arn%3Aaws%3Akms%3Aus-east-1%3A123456789012%3Akey%2F793a6cce-8a6e-4a2e-9507-84057baf86be%22%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D%0A\",\"versionId\":\"v3\",\"isDefaultVersion\":false,\"createDate\":\"2019-07-15T13:20:10.000Z\"},{\"document\":\"%7B%0A%20%20%22Version%22%3A%20%222012-10-17%22%2C%0A%20%20%22Statement%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22Action%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22config%3ADescribeConfigRuleEvaluationStatus%22%2C%0A%20%20%20%20%20%20%20%20%22config%3AGetResourceConfigHistory%22%2C%0A%20%20%20%20%20%20%20%20%22config%3AListDiscoveredResources%22%2C%0A%20%20%20%20%20%20%20%20%22logs%3ACreateLogGroup%22%2C%0A%20%20%20%20%20%20%20%20%22logs%3ACreateLogStream%22%2C%0A%20%20%20%20%20%20%20%20%22logs%3APutLogEvents%22%2C%0A%20%20%20%20%20%20%20%20%22ses%3ASendEmail%22%0A%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%22Effect%22%3A%20%22Allow%22%2C%0A%20%20%20%20%20%20%22Resource%22%3A%20%22%2A%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22Action%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22s3%3AGetObject%22%2C%0A%20%20%20%20%20%20%20%20%22s3%3AHeadBucket%22%2C%0A%20%20%20%20%20%20%20%20%22s3%3AListAllMyBuckets%22%2C%0A%20%20%20%20%20%20%20%20%22s3%3AListBucket%22%2C%0A%20%20%20%20%20%20%20%20%22s3%3AListObjects%22%0A%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%22Effect%22%3A%20%22Allow%22%2C%0A%20%20%20%20%20%20%22Resource%22%3A%20%22arn%3Aaws%3As3%3A%3A%3Aproject-env-logging%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22Effect%22%3A%20%22Allow%22%2C%0A%20%20%20%20%20%20%22Action%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22kms%3ADecrypt%22%0A%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%22Resource%22%3A%20%22arn%3Aaws%3Akms%3Aus-east-1%3A123456789012%3Akey%2F793a6cce-8a6e-4a2e-9507-84057baf86be%22%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D%0A\",\"versionId\":\"v2\",\"isDefaultVersion\":false,\"createDate\":\"2019-07-15T12:46:33.000Z\"},{\"document\":\"%7B%0A%20%20%22Version%22%3A%20%222012-10-17%22%2C%0A%20%20%22Statement%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22Action%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22config%3ADescribeConfigRuleEvaluationStatus%22%2C%0A%20%20%20%20%20%20%20%20%22config%3AGetResourceConfigHistory%22%2C%0A%20%20%20%20%20%20%20%20%22config%3AListDiscoveredResources%22%2C%0A%20%20%20%20%20%20%20%20%22logs%3ACreateLogGroup%22%2C%0A%20%20%20%20%20%20%20%20%22logs%3ACreateLogStream%22%2C%0A%20%20%20%20%20%20%20%20%22logs%3APutLogEvents%22%2C%0A%20%20%20%20%20%20%20%20%22ses%3ASendEmail%22%0A%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%22Effect%22%3A%20%22Allow%22%2C%0A%20%20%20%20%20%20%22Resource%22%3A%20%22%2A%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22Action%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22s3%3AGetObject%22%2C%0A%20%20%20%20%20%20%20%20%22s3%3AHeadBucket%22%2C%0A%20%20%20%20%20%20%20%20%22s3%3AListAllMyBuckets%22%2C%0A%20%20%20%20%20%20%20%20%22s3%3AListBucket%22%2C%0A%20%20%20%20%20%20%20%20%22s3%3AListObjects%22%0A%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%22Effect%22%3A%20%22Allow%22%2C%0A%20%20%20%20%20%20%22Resource%22%3A%20%22arn%3Aaws%3As3%3A%3A%3Aproject-env-logging%2F%2A%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22Effect%22%3A%20%22Allow%22%2C%0A%20%20%20%20%20%20%22Action%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22kms%3ADecrypt%22%0A%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%22Resource%22%3A%20%22arn%3Aaws%3Akms%3Aus-east-1%3A123456789012%3Akey%2F793a6cce-8a6e-4a2e-9507-84057baf86be%22%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D%0A\",\"versionId\":\"v1\",\"isDefaultVersion\":false,\"createDate\":\"2019-07-15T11:42:42.000Z\"}]}",
+            "supplementaryConfiguration": {}
+        }
+    ]

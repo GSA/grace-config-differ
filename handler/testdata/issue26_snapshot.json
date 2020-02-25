@@ -1,0 +1,24 @@
+{
+  "fileVersion": "1.0",
+  "configSnapshotId": "test",
+  "configurationItems": [
+    {
+      "relatedEvents": [],
+      "relationships": [],
+      "supplementaryConfiguration": {},
+      "tags": {},
+      "configurationItemVersion": "1.3",
+      "configurationItemCaptureTime": "2019-10-17T22:05:33.000Z",
+      "configurationStateId": 1571349933151,
+      "awsAccountId": "123456789012",
+      "configurationItemStatus": "OK",
+      "resourceType": "AWS::Config::ResourceCompliance",
+      "resourceId": "test",
+      "resourceName": "test",
+      "ARN": "arn:aws:s3:::test",
+      "awsRegion": "us-east-1",
+      "configurationStateMd5Hash": "",
+      "resourceCreationTime": "2019-03-11T14:16:47.000Z"
+    }
+  ]
+}

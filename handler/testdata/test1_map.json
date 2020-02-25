@@ -1,0 +1,340 @@
+[
+  {
+    "AccountId": "123456789012",
+    "Arn": "arn:aws:s3:::bucket-name",
+    "AvailabilityZone": "Regional",
+    "AwsRegion": "us-east-1",
+    "Configuration": {
+      "creationDate": "2019-03-14T15:55:57.000Z",
+      "name": "bucket-name",
+      "owner": {
+        "displayName": null,
+        "id": "idnumber"
+      }
+    },
+    "ConfigurationItemCaptureTime": "2019-07-16T11:18:20Z",
+    "ConfigurationItemMD5Hash": "",
+    "ConfigurationItemStatus": "OK",
+    "ConfigurationStateId": "1563275900379",
+    "RelatedEvents": [],
+    "Relationships": [],
+    "ResourceCreationTime": "2019-03-14T03:55:57Z",
+    "ResourceId": "bucket-name",
+    "ResourceName": "bucket-name",
+    "ResourceType": "AWS::S3::Bucket",
+    "SupplementaryConfiguration": {
+      "AccessControlList": {
+        "grantList": [
+          {
+            "grantee": {
+              "displayName": null,
+              "id": "idnumber"
+            },
+            "permission": "FullControl"
+          },
+          {
+            "grantee": "LogDelivery",
+            "permission": "Write"
+          },
+          {
+            "grantee": "LogDelivery",
+            "permission": "ReadAcp"
+          }
+        ],
+        "grantSet": null,
+        "isRequesterCharged": false,
+        "owner": {
+          "displayName": null,
+          "id": "idnumber"
+        }
+      },
+      "BucketAccelerateConfiguration": {
+        "status": null
+      },
+      "BucketLifecycleConfiguration": {
+        "rules": [
+          {
+            "abortIncompleteMultipartUpload": null,
+            "expirationDate": null,
+            "expirationInDays": 900,
+            "expiredObjectDeleteMarker": false,
+            "filter": {
+              "predicate": {
+                "operands": [
+                  {
+                    "prefix": "awslog/",
+                    "type": "LifecyclePrefixPredicate"
+                  },
+                  {
+                    "tag": {
+                      "key": "rule",
+                      "value": "awslog"
+                    },
+                    "type": "LifecycleTagPredicate"
+                  },
+                  {
+                    "tag": {
+                      "key": "autoclean",
+                      "value": "true"
+                    },
+                    "type": "LifecycleTagPredicate"
+                  }
+                ],
+                "type": "LifecycleAndOperator"
+              }
+            },
+            "id": "awslog",
+            "noncurrentVersionExpirationInDays": -1,
+            "noncurrentVersionTransitions": null,
+            "prefix": null,
+            "status": "Enabled",
+            "transitions": [
+              {
+                "date": null,
+                "days": 365,
+                "storageClass": "GLACIER"
+              }
+            ]
+          }
+        ]
+      },
+      "BucketLoggingConfiguration": {
+        "destinationBucketName": null,
+        "logFilePrefix": null
+      },
+      "BucketNotificationConfiguration": {
+        "configurations": {}
+      },
+      "BucketPolicy": {
+        "policyText": null
+      },
+      "BucketVersioningConfiguration": {
+        "isMfaDeleteEnabled": false,
+        "status": "Enabled"
+      },
+      "IsRequesterPaysEnabled": "false",
+      "PublicAccessBlockConfiguration": {
+        "blockPublicAcls": true,
+        "blockPublicPolicy": true,
+        "ignorePublicAcls": true,
+        "restrictPublicBuckets": true
+      },
+      "ServerSideEncryptionConfiguration": {
+        "rules": [
+          {
+            "applyServerSideEncryptionByDefault": {
+              "kmsMasterKeyID": null,
+              "sseAlgorithm": "AES256"
+            }
+          }
+        ]
+      }
+    },
+    "Tags": {},
+    "Version": "1.3"
+  },
+  {
+    "AccountId": "123456789012",
+    "Arn": "arn:aws:iam::123456789012:policy/project-env-prog",
+    "AvailabilityZone": "Not Applicable",
+    "AwsRegion": "global",
+    "Configuration": {
+      "arn": "arn:aws:iam::123456789012:policy/project-env-prog",
+      "attachmentCount": 1,
+      "createDate": "2019-07-15T11:42:42.000Z",
+      "defaultVersionId": "v4",
+      "description": "Policy to allow creating project service inventory report",
+      "isAttachable": true,
+      "path": "/",
+      "permissionsBoundaryUsageCount": null,
+      "policyId": "ANPAVPRN64ZYOK22R4VGI",
+      "policyName": "project-env-prog",
+      "policyVersionList": [
+        {
+          "createDate": "2019-07-15T13:26:17.000Z",
+          "document": {
+            "Statement": [
+              {
+                "Action": [
+                  "config:DescribeConfigRuleEvaluationStatus",
+                  "config:GetResourceConfigHistory",
+                  "config:ListDiscoveredResources",
+                  "logs:CreateLogGroup",
+                  "logs:CreateLogStream",
+                  "logs:PutLogEvents",
+                  "ses:SendEmail"
+                ],
+                "Effect": "Allow",
+                "Resource": "*"
+              },
+              {
+                "Action": [
+                  "s3:GetObject",
+                  "s3:ListBucket"
+                ],
+                "Effect": "Allow",
+                "Resource": [
+                  "arn:aws:s3:::project-env-logging",
+                  "arn:aws:s3:::project-env-logging/*"
+                ]
+              },
+              {
+                "Action": [
+                  "kms:Decrypt"
+                ],
+                "Effect": "Allow",
+                "Resource": "arn:aws:kms:us-east-1:123456789012:key/793a6cce-8a6e-4a2e-9507-84057baf86be"
+              }
+            ],
+            "Version": "2012-10-17"
+          },
+          "isDefaultVersion": true,
+          "versionId": "v4"
+        },
+        {
+          "createDate": "2019-07-15T13:20:10.000Z",
+          "document": {
+            "Statement": [
+              {
+                "Action": [
+                  "config:DescribeConfigRuleEvaluationStatus",
+                  "config:GetResourceConfigHistory",
+                  "config:ListDiscoveredResources",
+                  "logs:CreateLogGroup",
+                  "logs:CreateLogStream",
+                  "logs:PutLogEvents",
+                  "ses:SendEmail"
+                ],
+                "Effect": "Allow",
+                "Resource": "*"
+              },
+              {
+                "Action": [
+                  "s3:GetObject",
+                  "s3:HeadBucket",
+                  "s3:ListAllMyBuckets",
+                  "s3:ListBucket"
+                ],
+                "Effect": "Allow",
+                "Resource": "arn:aws:s3:::project-env-logging"
+              },
+              {
+                "Action": [
+                  "kms:Decrypt"
+                ],
+                "Effect": "Allow",
+                "Resource": "arn:aws:kms:us-east-1:123456789012:key/793a6cce-8a6e-4a2e-9507-84057baf86be"
+              }
+            ],
+            "Version": "2012-10-17"
+          },
+          "isDefaultVersion": false,
+          "versionId": "v3"
+        },
+        {
+          "createDate": "2019-07-15T12:46:33.000Z",
+          "document": {
+            "Statement": [
+              {
+                "Action": [
+                  "config:DescribeConfigRuleEvaluationStatus",
+                  "config:GetResourceConfigHistory",
+                  "config:ListDiscoveredResources",
+                  "logs:CreateLogGroup",
+                  "logs:CreateLogStream",
+                  "logs:PutLogEvents",
+                  "ses:SendEmail"
+                ],
+                "Effect": "Allow",
+                "Resource": "*"
+              },
+              {
+                "Action": [
+                  "s3:GetObject",
+                  "s3:HeadBucket",
+                  "s3:ListAllMyBuckets",
+                  "s3:ListBucket",
+                  "s3:ListObjects"
+                ],
+                "Effect": "Allow",
+                "Resource": "arn:aws:s3:::project-env-logging"
+              },
+              {
+                "Action": [
+                  "kms:Decrypt"
+                ],
+                "Effect": "Allow",
+                "Resource": "arn:aws:kms:us-east-1:123456789012:key/793a6cce-8a6e-4a2e-9507-84057baf86be"
+              }
+            ],
+            "Version": "2012-10-17"
+          },
+          "isDefaultVersion": false,
+          "versionId": "v2"
+        },
+        {
+          "createDate": "2019-07-15T11:42:42.000Z",
+          "document": {
+            "Statement": [
+              {
+                "Action": [
+                  "config:DescribeConfigRuleEvaluationStatus",
+                  "config:GetResourceConfigHistory",
+                  "config:ListDiscoveredResources",
+                  "logs:CreateLogGroup",
+                  "logs:CreateLogStream",
+                  "logs:PutLogEvents",
+                  "ses:SendEmail"
+                ],
+                "Effect": "Allow",
+                "Resource": "*"
+              },
+              {
+                "Action": [
+                  "s3:GetObject",
+                  "s3:HeadBucket",
+                  "s3:ListAllMyBuckets",
+                  "s3:ListBucket",
+                  "s3:ListObjects"
+                ],
+                "Effect": "Allow",
+                "Resource": "arn:aws:s3:::project-env-logging/*"
+              },
+              {
+                "Action": [
+                  "kms:Decrypt"
+                ],
+                "Effect": "Allow",
+                "Resource": "arn:aws:kms:us-east-1:123456789012:key/793a6cce-8a6e-4a2e-9507-84057baf86be"
+              }
+            ],
+            "Version": "2012-10-17"
+          },
+          "isDefaultVersion": false,
+          "versionId": "v1"
+        }
+      ],
+      "updateDate": "2019-07-15T13:26:17.000Z"
+    },
+    "ConfigurationItemCaptureTime": "2019-07-15T13:28:39Z",
+    "ConfigurationItemMD5Hash": "",
+    "ConfigurationItemStatus": "OK",
+    "ConfigurationStateId": "1563197403677",
+    "RelatedEvents": [],
+    "Relationships": [
+      {
+        "RelationshipName": "Is attached to Role",
+        "ResourceId": "IDNUMBER",
+        "ResourceName": "project-env-prog",
+        "ResourceType": "AWS::IAM::Role"
+      }
+    ],
+    "ResourceCreationTime": "2019-07-15T11:42:42Z",
+    "ResourceId": "ANPAVPRN64ZYOK22R4VGI",
+    "ResourceName": "project-env-prog",
+    "ResourceType": "AWS::IAM::Policy",
+    "SupplementaryConfiguration": {},
+    "Tags": {},
+    "Version": "1.3"
+  }
+]

@@ -1,0 +1,33 @@
+[
+    {
+        "AccountId": "012345678901",
+        "Arn": "arn:aws:lambda:us-east-1:012345678901:function:proj-env-customer",
+        "AvailabilityZone": "Not Applicable",
+        "AwsRegion": "us-east-1",
+        "Configuration": "{\"functionName\":\"proj-env-customer\",\"functionArn\":\"arn:aws:lambda:us-east-1:012345678901:function:proj-env-customer\",\"runtime\":\"go1.x\",\"role\":\"arn:aws:iam::012345678901:role/proj-env-customer-lambda\",\"handler\":\"proj-customer-lambda\",\"codeSize\":8700472,\"description\":\"Creates customers using JSON formatted requests placed in the proj-customer bucket new/\",\"timeout\":900,\"memorySize\":128,\"lastModified\":\"2019-06-24T15:28:59.263+0000\",\"codeSha256\":\"lGQKEgLPDEKll89AoX7zu1ge29KWdiLEM5jwf7mXNA0=\",\"version\":\"$LATEST\",\"tracingConfig\":{\"mode\":\"PassThrough\"},\"revisionId\":\"04f7d4af-a6b0-4241-9e44-73e140b004a5\",\"layers\":[],\"kmskeyArn\":\"arn:aws:kms:us-east-1:012345678901:key/a06336c5-fd98-4f48-8602-fa5251d1d32a\"}",
+        "ConfigurationItemCaptureTime": "2019-06-24T15:31:41Z",
+        "ConfigurationItemMD5Hash": "",
+        "ConfigurationItemStatus": "OK",
+        "ConfigurationStateId": "1561390301658",
+        "RelatedEvents": [],
+        "Relationships": [
+            {
+                "RelationshipName": "Is associated with ",
+                "ResourceId": null,
+                "ResourceName": "proj-env-customer-lambda",
+                "ResourceType": "AWS::IAM::Role"
+            }
+        ],
+        "ResourceCreationTime": null,
+        "ResourceId": "proj-env-customer",
+        "ResourceName": "proj-env-customer",
+        "ResourceType": "AWS::Lambda::Function",
+        "SupplementaryConfiguration": {
+            "Concurrency": "{\"reservedConcurrentExecutions\":1.0}",
+            "Policy": "\"{\\\"Version\\\":\\\"2012-10-17\\\",\\\"Id\\\":\\\"default\\\",\\\"Statement\\\":[{\\\"Sid\\\":\\\"AllowExecutionFromS3Bucket\\\",\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":{\\\"Service\\\":\\\"s3.amazonaws.com\\\"},\\\"Action\\\":\\\"lambda:InvokeFunction\\\",\\\"Resource\\\":\\\"arn:aws:lambda:us-east-1:012345678901:function:proj-env-customer\\\",\\\"Condition\\\":{\\\"ArnLike\\\":{\\\"AWS:SourceArn\\\":\\\"arn:aws:s3:::proj-env-customer\\\"}}},{\\\"Sid\\\":\\\"AllowExecutionFromCloudWatch\\\",\\\"Effect\\\":\\\"Allow\\\",\\\"Principal\\\":{\\\"Service\\\":\\\"events.amazonaws.com\\\"},\\\"Action\\\":\\\"lambda:InvokeFunction\\\",\\\"Resource\\\":\\\"arn:aws:lambda:us-east-1:012345678901:function:proj-env-customer\\\",\\\"Condition\\\":{\\\"ArnLike\\\":{\\\"AWS:SourceArn\\\":\\\"arn:aws:events:us-east-1:012345678901:rule/proj-env-customer\\\"}}}]}\"",
+            "Tags": "{}"
+        },
+        "Tags": {},
+        "Version": "1.3"
+    }
+]

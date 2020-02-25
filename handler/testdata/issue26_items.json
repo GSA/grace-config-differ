@@ -1,0 +1,21 @@
+[
+  {
+    "version": "1.3",
+    "accountId": "123456789012",
+    "configurationItemCaptureTime": "2019-10-17T22:05:33+00:00",
+    "configurationItemStatus": "OK",
+    "configurationStateId": "1571349933151",
+    "configurationItemMD5Hash": "",
+    "arn": "arn:aws:s3:::test",
+    "resourceType": "AWS::Config::ResourceCompliance",
+    "resourceId": "test",
+    "resourceName": "test",
+    "awsRegion": "us-east-1",
+    "tags": {},
+    "relatedEvents": [],
+    "relationships": [],
+    "supplementaryConfiguration": {
+      "unsupportedResources": "[{\"test\":\"test\"}]"
+    }
+  }
+]

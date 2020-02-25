@@ -1,0 +1,20 @@
+{
+  "ConfigRulesEvaluationStatus": [
+    {
+      "LastSuccessfulEvaluationTime": "2019-10-06T18:34:53Z"
+    },
+    {
+      "LastSuccessfulEvaluationTime": "2019-10-06T18:34:52Z"
+    },
+    {
+      "LastSuccessfulEvaluationTime": "2019-10-07T14:36:10Z"
+    },
+    {
+      "LastSuccessfulEvaluationTime": "2019-10-07T16:35:00Z"
+    },
+    {
+      "LastSuccessfulEvaluationTime": "2019-10-07T16:34:58Z"
+    }
+  ],
+  "NextToken": null
+}

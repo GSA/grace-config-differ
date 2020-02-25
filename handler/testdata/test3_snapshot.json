@@ -1,0 +1,14 @@
+{
+  "fileVersion": "1.0",
+  "configSnapshotId": "test",
+  "configurationItems": [
+    {
+      "relatedEvents": [],
+      "relationships": [],
+      "awsAccountId": "test",
+      "resourceType": "AWS::S3::Bucket",
+      "supplementaryConfiguration": {},
+      "resourceId": "test"
+    }
+  ]
+}
