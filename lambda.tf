@@ -4,7 +4,7 @@ resource "aws_lambda_function" "self" {
   description      = "Emails diffs in config service history"
   role             = aws_iam_role.self.arn
   handler          = "grace-config-differ"
-  source_code_hash = filesha256(var.source_file)
+  source_code_hash = filebase64sha256(var.source_file)
   kms_key_arn      = var.kms_key_arn
   runtime          = "go1.x"
   timeout          = 900
