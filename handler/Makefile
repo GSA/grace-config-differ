@@ -37,8 +37,8 @@ test: lint
 	go test -v ./...
 
 lint: go.mod dependencies
-	golangci-lint run ./...
-	gosec ./...
+	./bin/golangci-lint run ./...
+	./bin/gosec ./...
 
 go.mod:
 ifeq (,$(wildcard go.mod))
@@ -48,10 +48,12 @@ endif
 dependencies: $(GOLANGCILINT) $(GOSEC) $(GHR)
 
 $(GOLANGCILINT):
-	go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
+	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.23.6
+	# linter fails on latest version, pinning to last passing version. latest version is:
+		# curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.41.1
 
 $(GOSEC):
-	go get -u github.com/securego/gosec/cmd/gosec
+	curl -sfL https://raw.githubusercontent.com/securego/gosec/master/install.sh | sh -s v2.8.1
 
 $(GHR):
 	go get -u github.com/tcnksm/ghr
