@@ -2,7 +2,7 @@ version: 2
 jobs:
   test_lambda:
     docker:
-      - image: circleci/golang:latest
+      - image: cimg/go:1.19.2
     steps:
       - checkout
       - run:
@@ -11,7 +11,7 @@ jobs:
             pwd && make test_lambda
   release_lambda:
     docker:
-      - image: circleci/golang:latest
+      - image: cimg/go:1.19.2
     steps:
       - checkout
       - run:
@@ -43,18 +43,18 @@ jobs:
           command: if [[ -n "$(terraform fmt -write=false)" ]]; then echo "Some terraform files need be formatted, run 'terraform fmt' to fix"; exit 1; fi
       - run:
           name: Install tflint
-          command: curl -L -o /tmp/tflint.zip https://github.com/terraform-linters/tflint/releases/download/v0.29.1/tflint_linux_amd64.zip && unzip /tmp/tflint.zip -d /usr/local/bin
+          command: curl -L -o /tmp/tflint.zip https://github.com/terraform-linters/tflint/releases/download/v0.42.2/tflint_linux_amd64.zip && unzip /tmp/tflint.zip -d /usr/local/bin
       - run:
           name: Check Terraform configurations with tflint
           command: find . -name ".terraform" -prune -o -type f -name "*.tf" -exec dirname {} \;|sort -u | while read m; do (cd "$m" && tflint && echo "√ $m") || exit 1 ; done
   tfsec:
     docker:
-      - image: circleci/golang:latest
+      - image: cimg/go:1.19.2
     steps:
       - checkout
       - run:
           name: Install tfsec
-          command: env GO111MODULE=on go get -u github.com/aquasecurity/tfsec/cmd/tfsec
+          command: go install github.com/aquasecurity/tfsec/cmd/tfsec@v1.28.1
       - run:
           name: Terraform static code analysis with tfsec
           command: tfsec

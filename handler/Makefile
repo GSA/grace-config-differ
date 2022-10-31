@@ -49,12 +49,10 @@ endif
 dependencies: $(GOLANGCILINT) $(GOSEC) $(GHR)
 
 $(GOLANGCILINT):
-	go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.23.6
-	# linter fails on latest version, pinning to last passing version. latest version is:
-	# go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.41.1
+	go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.50.1
 
 $(GOSEC):
-	go get github.com/securego/gosec/v2/cmd/gosec@v2.8.1
+	go install github.com/securego/gosec/v2/cmd/gosec@v2.14.0
 
 $(GHR):
-	go get -u github.com/tcnksm/ghr
+	go install github.com/tcnksm/ghr@v0.16.0
