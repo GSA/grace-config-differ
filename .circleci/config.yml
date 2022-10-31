@@ -22,6 +22,8 @@ jobs:
           root: .
           paths:
             - ./release/*
+      - store_artifacts:
+          path: release/
   validate_terraform:
     environment:
         AWS_DEFAULT_REGION: us-east-1
