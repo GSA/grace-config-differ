@@ -1,3 +1,4 @@
+#tfsec:ignore:aws-lambda-enable-tracing
 resource "aws_lambda_function" "self" {
   filename         = var.source_file
   function_name    = local.app_name
