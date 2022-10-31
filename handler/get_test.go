@@ -2,7 +2,7 @@ package main
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"os"
 	"testing"
 	"time"
@@ -27,7 +27,7 @@ func parseStatusOutput(t *testing.T) configservice.DescribeConfigRuleEvaluationS
 
 	defer jsonFile.Close()
 
-	byteValue, _ := ioutil.ReadAll(jsonFile)
+	byteValue, _ := io.ReadAll(jsonFile)
 
 	err = json.Unmarshal(byteValue, &status)
 	if err != nil {

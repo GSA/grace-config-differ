@@ -24,19 +24,6 @@ linters-settings:
     line-length: 140
   goimports:
     local-prefixes: github.com/golangci/golangci-lint
-  gocritic:
-    enabled-tags:
-      - diagnostic
-      - experimental
-      - opinionated
-      - performance
-      - style
-    disabled-checks:
-      - dupImport # https://github.com/go-critic/go-critic/issues/845
-      - ifElseChain
-      - octalLiteral
-      - whyNoLint
-      - wrapperFunc
   funlen:
     lines: 100
     statements: 50
@@ -49,32 +36,17 @@ linters:
     - bodyclose
     - deadcode
     - depguard
-    - dogsled
-    - dupl
     - errcheck
-    - funlen
-    - gochecknoglobals
-    - gochecknoinits
-    - gocognit
-    - goconst
-    - gocritic
     - gocyclo
-    - godox
     - gofmt
     - goimports
-    - golint
-    - gomnd
+    - revive
     - gosec
     - gosimple
     - govet
     - ineffassign
-    - interfacer
-    - lll
-    - maligned
     - misspell
     - nakedret
-    - prealloc
-    - scopelint
     - staticcheck
     - structcheck
     - stylecheck
@@ -83,21 +55,3 @@ linters:
     - unparam
     - unused
     - varcheck
-    - whitespace
-    - wsl
-
-  # don't enable
-
-run:
-  skip-dirs:
-    - test/testdata_etc
-    - internal/cache
-    - internal/renameio
-    - internal/robustio
-
-# golangci.com configuration
-# https://github.com/golangci/golangci/wiki/Configuration
-service:
-  golangci-lint-version: 1.20.x # use the fixed version to not introduce new linters unexpectedly
-  prepare:
-    - echo "here I can run custom commands, but no preparation needed for this repo"

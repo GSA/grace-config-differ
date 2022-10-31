@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"os"
 	"reflect"
 	"runtime"
@@ -42,7 +42,7 @@ func getCallerFunc() string {
 }
 
 func unparsedTestItems(t *testing.T, f string) string {
-	s, err := ioutil.ReadFile(f)
+	s, err := os.ReadFile(f)
 	if err != nil {
 		t.Fatalf("Error reading %s: %v", f, err)
 	}
@@ -60,7 +60,7 @@ func parseTestItems(t *testing.T, f string) []*configservice.ConfigurationItem {
 
 	defer jsonFile.Close()
 
-	byteValue, err := ioutil.ReadAll(jsonFile)
+	byteValue, err := io.ReadAll(jsonFile)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -83,7 +83,7 @@ func parseTestMap(t *testing.T, f string) []map[string]interface{} {
 
 	defer jsonFile.Close()
 
-	byteValue, err := ioutil.ReadAll(jsonFile)
+	byteValue, err := io.ReadAll(jsonFile)
 	if err != nil {
 		t.Fatal(err)
 	}

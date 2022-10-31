@@ -3,7 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
+	"os"
 	"strings"
 
 	"encoding/json"
@@ -58,7 +58,7 @@ func sendEmail(
 		return htmlBody, err
 	}
 
-	err = ioutil.WriteFile(jsonFile, slice, 0600)
+	err = os.WriteFile(jsonFile, slice, 0600)
 	if err != nil {
 		log.Fatalf("error writing items to file: %v\n", err)
 		return htmlBody, err
