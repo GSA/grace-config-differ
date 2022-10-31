@@ -89,7 +89,8 @@ func TestParseItemsToHTMLCase2(t *testing.T) {
 
 // TestIssue26 ... SupplementaryConfiguration.unsupportedResources is not being
 // unmarshalled into JSON:
-//  	[map[resourceId:376979777136 resourceType:AWS::::Account]]
+//
+//	[map[resourceId:376979777136 resourceType:AWS::::Account]]
 func TestIssue26(t *testing.T) {
 	lastExecution := time.Date(2019, 10, 17, 22, 5, 0, 0, time.UTC)
 	expected := unparsedTestItems(t, "testdata/issue26.html")

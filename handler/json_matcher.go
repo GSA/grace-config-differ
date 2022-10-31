@@ -9,7 +9,8 @@ import (
 )
 
 // sliceSorter ... private function for sorting slices for order independent
-//  json matching
+//
+//	json matching
 func sliceSorter(x, y interface{}) bool {
 	s1, err := json.Marshal(x)
 	if err != nil {
@@ -27,7 +28,8 @@ func sliceSorter(x, y interface{}) bool {
 }
 
 // matchJSON ... compares and matches two json strings without regard for the
-//  order of contained slices/arrays.  Returns true if equal false if different
+//
+//	order of contained slices/arrays.  Returns true if equal false if different
 func matchJSON(j1, j2 string) bool {
 	var m1, m2 map[string]interface{}
 
