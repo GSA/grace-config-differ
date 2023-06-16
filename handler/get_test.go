@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	numResourceTypes = 64
+	numResourceTypes = 336
 )
 
 // helper functions //
@@ -93,7 +93,7 @@ func TestGetDiscoveredResources(t *testing.T) {
 	if len(a) != 0 {
 		t.Errorf("Expected empty result.  Got:%v", a)
 	}
-	// Case of a resource for all types (64)
+	// Case of a resource for all types (336)
 	resp = configservice.ListDiscoveredResourcesOutput{
 		NextToken: nil,
 		ResourceIdentifiers: []*configservice.ResourceIdentifier{
